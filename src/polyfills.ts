@@ -19,7 +19,11 @@
  */
 
 /** IE10 and IE11 requires the following for NgClass support on SVG elements */
-// import 'classlist.js';  // Run `npm install --save classlist.js`.
+import 'classlist.js';  // Run `npm install --save classlist.js`.
+
+
+/** Regenerator runtime for async lit-element lifecycle methods */
+import 'regenerator-runtime/runtime';
 
 /**
  * Web Animations `@angular/platform-browser/animations`

@@ -21,7 +21,12 @@
             "aot": false,
             "assets": [
               "src/favicon.ico",
-              "src/assets"
+              "src/assets",
+              {
+                "glob": "**/*.js",
+                "input": "./node_modules/@webcomponents/webcomponentsjs",
+                "output": "/assets/scripts/webcomponents/"
+              }
             ],
             "styles": [
               "src/styles.css"
