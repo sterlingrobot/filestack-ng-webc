@@ -1,20 +1,52 @@
 :host {
-  display: block;
-  font: 20px sans-serif;
+  display: flex;
+  flex-flow: column nowrap;
+  align-items: center;
   margin: 20px;
+  font: 20px sans-serif;
+}
+
+:host * {
+  box-sizing: border-box;
+}
+
+:host .result {
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: center;
+  align-items: stretch;
+  width: 100%;
+  min-height: 400px;
+  margin: 20px;
+  border: 1px solid #bfbfbf;
+}
+
+:host .image-upload {
+  display: flex;
+  flex: 0 1 50%;
+  justify-content: center;
+  align-items: center;
+  padding: 10px;
+  text-align: center;
+}
+
+:host .image-upload img {
+  max-width: 100%;
 }
 
 :host button {
-  appearance: none;
-  font: 20px sans-serif;
+  display: block;
+  margin: 10px auto;
   padding: 10px 20px;
   background: #fff;
   border: 1px solid #ccc;
   border-radius: 5px;
+  appearance: none;
+  font: 20px sans-serif;
 }
 
 :host .alert {
   padding: 20px;
-  font: 16px monospace;
   white-space: pre-line;
+  font: 16px monospace;
 }

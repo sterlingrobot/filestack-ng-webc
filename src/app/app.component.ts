@@ -11,6 +11,7 @@ import * as filestack from "filestack-js";
 export class AppComponent {
   title = 'filestack-ng-webc';
   alert: string = '';
+  uploadedImgs: filestack.PickerFileMetadata[] = [];
 
   openFilePicker() {
     if(!environment.filestackApiKey) {
@@ -21,6 +22,18 @@ export class AppComponent {
       `;
     }
     const filestackClient = filestack.init(environment.filestackApiKey);
-    return filestackClient.picker().open();
+    return filestackClient.picker({
+      onUploadDone: response => {
+        const { filesUploaded } = response;
+        if(filesUploaded.length) {
+          this.uploadedImgs = [
+            ...this.uploadedImgs,
+            ...filesUploaded
+              .map( file => /^image/.test(file.mimetype) && file)
+              .filter(_ => !!_)
+          ];
+        }
+      }
+    }).open();
   }
 }

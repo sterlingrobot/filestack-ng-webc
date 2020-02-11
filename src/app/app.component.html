@@ -1,3 +1,13 @@
+<div class="result">
+  <div class="image-upload" *ngFor="let image of uploadedImgs">
+    <figure>
+      <img [src]="image.url">
+      <figcaption>{{ image.filename }}</figcaption>
+    </figure>
+
+  </div>
+</div>
+
 <button (click)="openFilePicker()">Open Filestack Picker</button>
 
 <div *ngIf="alert" class="alert">{{ alert }}</div>
